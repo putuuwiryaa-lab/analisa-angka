@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --font-brand: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+  --font-display: 'Rajdhani', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --bg: #090714;
+  --bg-soft: #110d22;
+  --surface: rgba(255, 255, 255, 0.055);
+  --surface-strong: rgba(255, 255, 255, 0.085);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f7f1ff;
+  --muted: #b8accf;
+  --soft: #7f719d;
+  --accent: #a98cff;
+  --accent-2: #f6c66a;
+  --danger: #ff6b8a;
+  --success: #79f2bb;
+  --radius-panel: 28px;
+  --radius-card: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 5%, rgba(124, 77, 255, 0.28), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 88% 10%, rgba(246, 198, 106, 0.16), transparent 56%),
+    linear-gradient(180deg, #120e24 0%, #090714 70%, #06040d 100%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 48rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 1.5rem);
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(1rem, 4vw, 1.5rem) 0;
+}
+
+.page-center {
+  display: grid;
+  place-items: center;
+}
+
+.hero-card,
+.panel-card {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.hero-card {
+  max-width: 34rem;
+  padding: clamp(1.25rem, 5vw, 2rem);
+}
+
+.panel-card {
+  padding: clamp(1rem, 4vw, 1.5rem);
+}
+
+.narrow-card {
+  max-width: 32rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent-2);
+  font-family: var(--font-brand);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 9vw, 3.25rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.muted {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.primary-button,
+.ghost-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-card);
+  padding: 0 1rem;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent), #7c4dff);
+  color: #090714;
+}
+
+.ghost-button {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums slashed-zero;
+  font-feature-settings: 'tnum' 1, 'zero' 1;
+}
